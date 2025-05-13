@@ -293,7 +293,6 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // تحديد الامتحانات المنتهية
       const today = new Date();
       document.querySelectorAll('tr[data-date]').forEach(row => {
         const examDate = new Date(row.getAttribute('data-date'));
@@ -302,18 +301,15 @@
         }
       });
 
-      // عناصر التحكم
       const nonTotalBtn = document.getElementById('nonTotalBtn');
       const totalBtn = document.getElementById('totalBtn');
       const nonTotalContent = document.getElementById('nonTotalContent');
       const totalContent = document.getElementById('totalContent');
 
-      // إظهار/إخفاء المحتوى
       nonTotalBtn.addEventListener('click', function() {
         nonTotalContent.classList.toggle('active');
         totalContent.classList.remove('active');
         
-        // تأثير على الزر
         this.style.transform = 'scale(0.95)';
         setTimeout(() => {
           this.style.transform = 'scale(1)';
@@ -324,14 +320,12 @@
         totalContent.classList.toggle('active');
         nonTotalContent.classList.remove('active');
         
-        // تأثير على الزر
         this.style.transform = 'scale(0.95)';
         setTimeout(() => {
           this.style.transform = 'scale(1)';
         }, 200);
       });
 
-      // تأثير عند النقر على الصف
       document.querySelectorAll('tbody tr').forEach(row => {
         row.addEventListener('click', function() {
           this.style.transform = 'scale(0.98)';
